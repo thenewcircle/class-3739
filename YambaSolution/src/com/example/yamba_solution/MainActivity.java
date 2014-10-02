@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			public void afterTextChanged(Editable s) {
 				onTweetTextChanged(s);
 			}});
-        
+        onTweetTextChanged(editStatus.getText());
     }
 
 
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 
 
 	public void onTweetTextChanged(Editable s) {
-		int length = s.length();
+		int length = editStatus.getText().length();
 		String sizeLeft = String.valueOf(MAX_TWEET_SIZE-length);
 		textCount.setText(sizeLeft);
 	}
