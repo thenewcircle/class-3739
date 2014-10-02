@@ -28,17 +28,6 @@ public class MainActivity extends Activity {
         buttonTweet = (Button) findViewById(R.id.buttonTweet);
         editStatus = (EditText) findViewById(R.id.editStatus);
         textCount = (TextView) findViewById(R.id.textCount);
-        
-		OnClickListener clickListener = new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				String text = editStatus.getText().toString();
-				Log.i(TAG, "Sending Tweet: " + text);
-				Toast toast = Toast.makeText(MainActivity.this, "Tweet Successful: " + text,
-						Toast.LENGTH_LONG);
-				toast.show();
-			}};
-		buttonTweet.setOnClickListener(clickListener );
     }
 
 
@@ -60,4 +49,12 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+	public void onTweetButtonClick(View view) {
+		String text = editStatus.getText().toString();
+		Log.i(TAG, "Sending Tweet: " + text);
+		Toast toast = Toast.makeText(MainActivity.this, "Tweet Successful: " + text,
+				Toast.LENGTH_LONG);
+		toast.show();
+	}
 }
