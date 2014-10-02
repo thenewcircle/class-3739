@@ -2,6 +2,8 @@ package com.example.yamba_solution;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
+
+	private static final int MAX_TWEET_SIZE = 140;
 
 	public final String TAG = this.getClass().getSimpleName();
 	
@@ -28,6 +32,21 @@ public class MainActivity extends Activity {
         buttonTweet = (Button) findViewById(R.id.buttonTweet);
         editStatus = (EditText) findViewById(R.id.editStatus);
         textCount = (TextView) findViewById(R.id.textCount);
+        
+//		buttonTweet.setOnClickListener(new OnClickListener() {
+//			public void onClick(View v) {
+//				onTweetButtonClick(v);
+//		}});
+
+        editStatus.addTextChangedListener(new TextWatcher() {
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {}
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {}
+			public void afterTextChanged(Editable s) {
+				onTweetTextChanged(s);
+			}});
+        
     }
 
 
@@ -56,5 +75,12 @@ public class MainActivity extends Activity {
 		Toast toast = Toast.makeText(MainActivity.this, "Tweet Successful: " + text,
 				Toast.LENGTH_LONG);
 		toast.show();
+	}
+
+
+	public void onTweetTextChanged(Editable s) {
+		int length = s.length();
+		String sizeLeft = String.valueOf(MAX_TWEET_SIZE-length);
+		textCount.setText(sizeLeft);
 	}
 }
