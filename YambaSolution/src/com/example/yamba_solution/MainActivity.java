@@ -1,6 +1,7 @@
 package com.example.yamba_solution;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -80,7 +81,15 @@ public class MainActivity extends Activity {
 
 	public void onTweetTextChanged(Editable s) {
 		int length = editStatus.getText().length();
-		String sizeLeft = String.valueOf(MAX_TWEET_SIZE-length);
-		textCount.setText(sizeLeft);
+		int sizeLeft = MAX_TWEET_SIZE-length;
+		if (sizeLeft <= 0) {
+			textCount.setTextColor(Color.RED);
+		} else if (sizeLeft <= 30) {
+			textCount.setTextColor(Color.YELLOW);
+		} else {
+			textCount.setTextColor(Color.GREEN);
+		}
+		String sizeLeftString = String.valueOf(sizeLeft);
+		textCount.setText(sizeLeftString);
 	}
 }

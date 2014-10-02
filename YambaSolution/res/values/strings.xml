@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="tweetHint">Enter your tweet here.</string>
     <string name="tweetButtonLabel">Tweet</string>
+    <string name="maxTweetSize">140</string>
     
 </resources>
