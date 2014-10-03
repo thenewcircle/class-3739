@@ -7,5 +7,6 @@
     <string name="tweetHint">Enter your tweet here.</string>
     <string name="tweetButtonLabel">Tweet</string>
     <string name="maxTweetSize">140</string>
-    
+    <string name="title_activity_tweet">TweetActivity</string>
+
 </resources>

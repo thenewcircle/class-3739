@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yamba Solution</string>
+    <string name="hello_world">Gruss dich, welt!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tweetHint">Tippen ihre tweet heir.</string>
+    <string name="tweetButtonLabel">Tweet</string>
+    <string name="maxTweetSize">140</string>
+    
+</resources>
